@@ -3,6 +3,7 @@
 - Openwrt源码是[coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)&[Lienol/openwrt](https://github.com/Lienol/openwrt)。
 - Github Actions来自于[P3TERX/Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)，[中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)。
 - 编译目标为小娱路由XY-C1/C5
+
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Ljzkirito/Actions-Openwrt_XY-C5?style=for-the-badge&label=Download)](https://github.com/Ljzkirito/Actions-Openwrt_XY-C5/releases/latest)
 
 ## 编译固件配置说明
