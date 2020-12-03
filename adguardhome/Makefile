@@ -6,7 +6,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=AdGuardHome
+PKG_NAME:=adguardhome
 PKG_VERSION:=0.104.3
 PKG_RELEASE:=1
 
@@ -25,7 +25,6 @@ PKG_USE_MIPS16:=0
 
 GO_PKG:=github.com/AdguardTeam/AdGuardHome
 GO_PKG_EXCLUDES:=dhcpd/standalone
-GO_PKG_LDFLAGS:=-s -w
 GO_PKG_LDFLAGS_X:=main.version=$(PKG_VERSION) main.channel=release main.goarm=$(GO_ARM)
 
 include $(INCLUDE_DIR)/package.mk
