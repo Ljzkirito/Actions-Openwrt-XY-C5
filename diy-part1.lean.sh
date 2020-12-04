@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 #
 # Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
 #
@@ -35,6 +35,9 @@ rm -rf package/lean/luci-theme-argon && git clone -b 18.06 https://github.com/je
 # 使用官方ppp
 rm -rf package/network/services/ppp
 svn co https://github.com/openwrt/openwrt/trunk/package/network/services/ppp package/network/services/ppp
+# 下载去广告文件anti-ad-for-dnsmasq.conf
+mkdir -p $GITHUB_WORKSPACE/files/etc/dnsmasq.d
+wget -O $GITHUB_WORKSPACE/files/etc/dnsmasq.d/anti-ad-for-dnsmasq.conf https://anti-ad.net/anti-ad-for-dnsmasq.conf
 # Remove UnblockNeteaseMusicGo upx commands
 sed -i "/upx/d" package/lean/UnblockNeteaseMusicGo/Makefile || true
 #===================================================================================================================================
@@ -46,9 +49,6 @@ sed -i "/upx/d" package/lean/UnblockNeteaseMusicGo/Makefile || true
 #git clone https://github.com/jerrykuku/luci-app-argon-config package/lean/luci-app-argon-config
 # 获取luci-app-smartdns
 #svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/lean/luci-app-smartdns
-# 下载去广告文件anti-ad-for-dnsmasq.conf
-#mkdir $GITHUB_WORKSPACE/files/etc/dnsmasq.d
-#wget -O $GITHUB_WORKSPACE/files/etc/dnsmasq.d/anti-ad-for-dnsmasq.conf https://anti-ad.net/anti-ad-for-dnsmasq.conf
 # 获取luci-app-serverchan
 #git clone https://github.com/tty228/luci-app-serverchan package/diy-packages/luci-app-serverchan
 # 获取luci-app-openclash 编译po2lmo

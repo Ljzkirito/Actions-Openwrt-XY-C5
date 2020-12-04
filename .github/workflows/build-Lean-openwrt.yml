@@ -1,4 +1,4 @@
-#
+﻿#
 # Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
 #
 # This is free software, licensed under the MIT License.
@@ -28,7 +28,7 @@ env:
   CONFIG_FILE: XY-C1.lean.config
   DIY_P1_SH: diy-part1.lean.sh
   DIY_P2_SH: diy-part2.lean.sh
-  UPLOAD_BIN_DIR: true
+  UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
