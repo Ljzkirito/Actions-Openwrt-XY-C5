@@ -35,6 +35,9 @@ rm -rf package/lean/luci-theme-argon && git clone -b 18.06 https://github.com/je
 # 使用官方ppp
 rm -rf package/network/services/ppp
 svn co https://github.com/openwrt/openwrt/trunk/package/network/services/ppp package/network/services/ppp
+# Use xiaorouji/openwrt-passwall/xray
+rm -rf package/lean/xray
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray package/lean/xray
 # Remove UnblockNeteaseMusicGo upx commands
 sed -i "/upx/d" package/lean/UnblockNeteaseMusicGo/Makefile || true
 #===================================================================================================================================
