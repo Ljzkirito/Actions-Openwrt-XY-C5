@@ -9,31 +9,30 @@
 ## 编译固件配置说明
 
 ### lean固件包含以下插件
-- IPv6支持
-- [SSR(Helloworld)](https://github.com/fw876/helloworld)
-- [Passwall](https://github.com/xiaorouji/openwrt-passwall/tree/main/luci-app-passwall)
-- UPnP
-- 解锁网易云灰色歌曲
-- 动态 DNS
-- AdGuardHome
-- 网络唤醒
-- Argon 主题
+>- IPv6支持
+>- <del>[SSR(Helloworld)](https://github.com/fw876/helloworld)</del>
+>- [Passwall](https://github.com/xiaorouji/openwrt-passwall/tree/main/luci-app-passwall)
+>- UPnP
+>- 解锁网易云灰色歌曲
+>- 动态 DNS
+>- 网络唤醒
+>- Argon 主题
 ### Lienol固件包含以下插件
-- IPv6支持
-- [Passwall](https://github.com/xiaorouji/openwrt-passwall/tree/main/luci-app-passwall)
-- UPnP
-- vlmcsd
-- 解锁网易云灰色歌曲
-- 动态 DNS
-- SmartDNS
-- 网络唤醒
-- Argon 主题
+>- IPv6支持
+>- [Passwall](https://github.com/xiaorouji/openwrt-passwall/tree/main/luci-app-passwall)
+>- UPnP
+>- vlmcsd
+>- 解锁网易云灰色歌曲
+>- 动态 DNS
+>- SmartDNS
+>- 网络唤醒
+>- Argon 主题
 
 ## Config文件生成参考
 
 - `make menuconfig` 可参考[OpenWrt MenuConfig设置和LuCI插件选项说明](https://mtom.ml/827.html)，一般先选`Target System`，`Subtarget`，`Target Profile`，再选`LUCI`插件。
 - .config文件生成可借助WSL或Ubuntu虚拟机，执行以下命令
-```shell
+```
 sudo sed -i 's#http://archive.ubuntu.com#https://mirrors.huaweicloud.com#' /etc/apt/sources.list
 sudo sed -i 's#http://security.ubuntu.com#https://mirrors.huaweicloud.com#' /etc/apt/sources.list
 sudo apt update
