@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 #
 # Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
 #
@@ -35,9 +35,6 @@ rm -rf package/lean/luci-theme-argon && git clone -b 18.06 https://github.com/je
 # 使用官方ppp
 rm -rf package/network/services/ppp
 svn co https://github.com/openwrt/openwrt/trunk/package/network/services/ppp package/network/services/ppp
-# 下载去广告文件anti-ad-for-dnsmasq.conf
-mkdir -p $GITHUB_WORKSPACE/files/etc/dnsmasq.d
-wget -O $GITHUB_WORKSPACE/files/etc/dnsmasq.d/anti-ad-for-dnsmasq.conf https://anti-ad.net/anti-ad-for-dnsmasq.conf
 # Remove UnblockNeteaseMusicGo upx commands
 sed -i "/upx/d" package/lean/UnblockNeteaseMusicGo/Makefile || true
 #===================================================================================================================================
@@ -56,6 +53,9 @@ sed -i "/upx/d" package/lean/UnblockNeteaseMusicGo/Makefile || true
 #pushd package/openclash/luci-app-openclash/tools/po2lmo
 #make && sudo make install
 #popd
+# 下载去广告文件anti-ad-for-dnsmasq.conf
+#mkdir -p $GITHUB_WORKSPACE/files/etc/dnsmasq.d
+#wget -O $GITHUB_WORKSPACE/files/etc/dnsmasq.d/anti-ad-for-dnsmasq.conf https://anti-ad.net/anti-ad-for-dnsmasq.conf
 # v2ray 4.33.0
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=4.33.0/g' package/lean/v2ray/Makefile
-#sed -i 's/PKG_HASH:=.*/PKG_HASH:=ce456df0a798e1ed76ec014cb619e89c508bfb812c689260067575ee94e18c76/g' package/lean/v2ray/Makefile
+#sed -i 's/PKG_HASH:=.*/PKG_HASH:=ce456df0a798e1ed76ec014cb619e89c508bfb812c689260067575ee94e18c76/g' package/lean/v2ray/Makefil
