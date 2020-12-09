@@ -14,7 +14,7 @@
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 # 版本号里显示一个自己的名字
 sed -i "s/OpenWrt /Ljzkirito build OpenWrt @/g" package/lean/default-settings/files/zzz-default-settings
-sed -i "s/R20.10.20/R$(TZ=UTC-8 date "+%Y.%m.%d")/g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/R20.10.20/R$(TZ=UTC-8 date "+%y.%m.%d")/g" package/lean/default-settings/files/zzz-default-settings
 # 设置密码为空（安装固件时无需密码登陆，然后自己修改想要的密码）
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
 # 使用官方golang版本
@@ -39,6 +39,8 @@ sed -i 's/ext_ip_reserved_ignore\ 0/ext_ip_reserved_ignore\ 1/' feeds/packages/n
 mv $GITHUB_WORKSPACE/adguardhome $GITHUB_WORKSPACE/openwrt/package/lean
 # let pdnsd filter aaaa
 mv $GITHUB_WORKSPACE/pdnsd-patch/* $GITHUB_WORKSPACE/openwrt/package/lean/pdnsd-alt/patches
+sed -i 's/min_ttl = 1h/min_ttl = 10m/g' feeds/passwall/luci-app-passwall/root/usr/share/passwall/app.sh
+sed -i 's/min_ttl = 1h/min_ttl = 10m/g' feeds/helloworld/luci-app-ssr-plus/root/etc/init.d/shadowsocksr
 #======================================================================================
 # 修改 argon 为默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
