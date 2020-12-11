@@ -10,10 +10,10 @@
 
 ### lean固件包含以下插件
 >- IPv6支持
->- <del>[SSR(Helloworld)](https://github.com/fw876/helloworld)</del>
+>- [SSR(Helloworld)](https://github.com/fw876/helloworld)
 >- [Passwall](https://github.com/xiaorouji/openwrt-passwall/tree/main/luci-app-passwall)
 >- UPnP
->- 解锁网易云灰色歌曲
+>- <del>解锁网易云灰色歌曲</del>
 >- 动态 DNS
 >- 网络唤醒
 >- Argon 主题
@@ -60,6 +60,8 @@ make defconfig
 - [超简单云编译](https://github.com/281677160/build-openwrt)
 - [借助 GitHub Actions 的 OpenWrt 在线集成自动编译](https://github.com/KFERMercer/OpenWrt-CI)
 - [qughij/openwrt-xiaoyu_xy-c5](https://github.com/qughij/openwrt-xiaoyu_xy-c5)
+- [SuLingGG/OpenWrt-Rpi](https://github.com/SuLingGG/OpenWrt-Rpi)
+- [IvanSolis1989/OpenWrt-DIY](https://github.com/IvanSolis1989/OpenWrt-DIY)
 - [zlxj2000/Openwrt-firmware](https://github.com/zlxj2000/Openwrt-firmware)
 - [SuLingGG/Action-OpenWrt-Plus](https://github.com/SuLingGG/Action-OpenWrt-Plus)
 - [Lancenas/Actions-Lean-OpenWrt](https://github.com/Lancenas/Actions-Lean-OpenWrt)
