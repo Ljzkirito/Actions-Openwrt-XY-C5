@@ -28,12 +28,6 @@ popd
 pushd feeds/luci/applications
 rm -fr luci-app-https-dns-proxy && svn co https://github.com/Lienol/openwrt-luci/branches/17.01/applications/luci-app-https-dns-proxy
 popd
-# 使用官方 miniupnp版本
-pushd feeds/packages/net
-rm -fr miniupnpd && svn co https://github.com/openwrt/packages/trunk/net/miniupnpd
-popd
-sed -i 's/ipv6_disable\ 0/ipv6_disable\ 1/' feeds/packages/net/miniupnpd/files/miniupnpd.init                       #默认关闭ipv6
-sed -i 's/ext_ip_reserved_ignore\ 0/ext_ip_reserved_ignore\ 1/' feeds/packages/net/miniupnpd/files/miniupnpd.init   #默认关闭保留地址检查
 # adguardhome
 #rm -fr feeds/packages/net/adguardhome
 mv $GITHUB_WORKSPACE/adguardhome $GITHUB_WORKSPACE/openwrt/package/lean
@@ -42,7 +36,7 @@ mv $GITHUB_WORKSPACE/pdnsd-patch/* $GITHUB_WORKSPACE/openwrt/package/lean/pdnsd-
 sed -i 's/min_ttl = 1h/min_ttl = 10m/g' feeds/passwall/luci-app-passwall/root/usr/share/passwall/app.sh
 sed -i 's/min_ttl = 1h/min_ttl = 10m/g' feeds/helloworld/luci-app-ssr-plus/root/etc/init.d/shadowsocksr
 #======================================================================================
-# 修改 argon 为默认主题
+# 修改 argon 为默认主题,不再集成luci-theme-bootstrap
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 #======================================================================================
 # Add kernel build user
@@ -66,6 +60,12 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 #pushd feeds/luci/applications
 #rm -fr luci-app-upnp && svn co https://github.com/Lienol/openwrt-luci/branches/17.01/applications/luci-app-upnp
 #popd
+# 使用官方 miniupnp版本
+#pushd feeds/packages/net
+#rm -fr miniupnpd && svn co https://github.com/openwrt/packages/trunk/net/miniupnpd
+#popd
+#sed -i 's/ipv6_disable\ 0/ipv6_disable\ 1/' feeds/packages/net/miniupnpd/files/miniupnpd.init                       #默认关闭ipv6
+#sed -i 's/ext_ip_reserved_ignore\ 0/ext_ip_reserved_ignore\ 1/' feeds/packages/net/miniupnpd/files/miniupnpd.init   #默认关闭保留地址检查
 # Remove upx commands
 #makefile_file="$({ find package|grep Makefile |sed "/Makefile./d"; } 2>"/dev/null")"
 #for a in ${makefile_file}
