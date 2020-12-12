@@ -158,7 +158,7 @@ jobs:
 
     - name: Generate release tag
       id: tag
-      if: env.UPLOAD_RELEASE == 'true' && steps.tag.outputs.status == 'success' && !cancelled()
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
         echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
         touch release.txt
@@ -171,7 +171,7 @@ jobs:
 
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
-      if: env.UPLOAD_RELEASE == 'true' && steps.tag.outputs.status == 'success' && !cancelled()
+      if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -181,15 +181,16 @@ jobs:
 
     - name: Delete workflow runs
       uses: ActionsRML/delete-workflow-runs@main
-      if: steps.tag.outputs.status == 'success' && !cancelled()
+      if: (!cancelled())
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         repository: ${{ github.repository }}
         retain_days: 1
         keep_minimum_runs: 3
+
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.1.0
-      if: env.UPLOAD_RELEASE == 'true' && steps.tag.outputs.status == 'success' && !cancelled()
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         keep_latest: 3
         delete_tags: true
