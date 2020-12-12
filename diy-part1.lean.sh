@@ -35,9 +35,6 @@ rm -rf package/lean/luci-theme-argon && git clone -b 18.06 https://github.com/je
 # 使用官方ppp
 rm -rf package/network/services/ppp
 svn co https://github.com/openwrt/openwrt/trunk/package/network/services/ppp package/network/services/ppp
-# Use xiaorouji/openwrt-passwall/xray
-rm -rf package/lean/xray
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray package/lean/xray
 # Remove UnblockNeteaseMusicGo upx commands
 sed -i "/upx/d" package/lean/UnblockNeteaseMusicGo/Makefile || true
 #===================================================================================================================================
@@ -59,6 +56,9 @@ sed -i "/upx/d" package/lean/UnblockNeteaseMusicGo/Makefile || true
 # 下载去广告文件anti-ad-for-dnsmasq.conf
 #mkdir -p $GITHUB_WORKSPACE/files/etc/dnsmasq.d
 #wget -O $GITHUB_WORKSPACE/files/etc/dnsmasq.d/anti-ad-for-dnsmasq.conf https://anti-ad.net/anti-ad-for-dnsmasq.conf
+# Use xiaorouji/openwrt-passwall/xray
+#rm -rf package/lean/xray
+#svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray package/lean/xray
 # Xray : Update V1.1.3
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.1.3/g' package/lean/xray/Makefile
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=cc6d2e25dcd710e26092bf84cd9ce65d5c6efd0e60014210fa03cf0297b83eb0/g' package/lean/xray/Makefile
