@@ -60,5 +60,5 @@ sed -i "/upx/d" package/lean/UnblockNeteaseMusicGo/Makefile || true
 #mkdir -p $GITHUB_WORKSPACE/files/etc/dnsmasq.d
 #wget -O $GITHUB_WORKSPACE/files/etc/dnsmasq.d/anti-ad-for-dnsmasq.conf https://anti-ad.net/anti-ad-for-dnsmasq.conf
 # Xray : Update V1.1.3
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.1.3/g' package/lean/xray/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=cc6d2e25dcd710e26092bf84cd9ce65d5c6efd0e60014210fa03cf0297b83eb0/g' package/lean/xray/Makefile
+#sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.1.3/g' package/lean/xray/Makefile
+#sed -i 's/PKG_HASH:=.*/PKG_HASH:=cc6d2e25dcd710e26092bf84cd9ce65d5c6efd0e60014210fa03cf0297b83eb0/g' package/lean/xray/Makefile
