@@ -27,9 +27,6 @@ popd
 pushd feeds/luci/applications
 rm -fr luci-app-https-dns-proxy && svn co https://github.com/Lienol/openwrt-luci/branches/17.01/applications/luci-app-https-dns-proxy
 popd
-# adguardhome
-#rm -fr feeds/packages/net/adguardhome
-mv $GITHUB_WORKSPACE/adguardhome $GITHUB_WORKSPACE/openwrt/package/lean
 # let pdnsd filter aaaa
 mv $GITHUB_WORKSPACE/pdnsd-patch/* $GITHUB_WORKSPACE/openwrt/package/lean/pdnsd-alt/patches
 #sed -i 's/min_ttl = 1h/min_ttl = 10m/g' feeds/passwall/luci-app-passwall/root/usr/share/passwall/app.sh
@@ -66,6 +63,9 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 #popd
 #sed -i 's/ipv6_disable\ 0/ipv6_disable\ 1/' feeds/packages/net/miniupnpd/files/miniupnpd.init                       #默认关闭ipv6
 #sed -i 's/ext_ip_reserved_ignore\ 0/ext_ip_reserved_ignore\ 1/' feeds/packages/net/miniupnpd/files/miniupnpd.init   #默认关闭保留地址检查
+# adguardhome
+#rm -fr feeds/packages/net/adguardhome
+#mv $GITHUB_WORKSPACE/adguardhome $GITHUB_WORKSPACE/openwrt/package/lean
 # Remove upx commands
 #makefile_file="$({ find package|grep Makefile |sed "/Makefile./d"; } 2>"/dev/null")"
 #for a in ${makefile_file}
