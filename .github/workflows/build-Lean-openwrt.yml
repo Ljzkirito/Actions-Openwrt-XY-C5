@@ -122,6 +122,14 @@ jobs:
         name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: openwrt/bin
 
+    - name: Upload some ipk
+      id: ipk
+      if: (!cancelled())
+      run: |
+        cp openwrt/bin/packages/*/*/*ssr-plus*.ipk openwrt/bin/targets/*/*/ || true
+        cp openwrt/bin/packages/*/*/*passwall*.ipk openwrt/bin/targets/*/*/ || true
+        cp openwrt/bin/packages/*/*/xray*.ipk openwrt/bin/targets/*/*/ || true
+
     - name: Organize files
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
@@ -177,7 +185,11 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        files: ${{ env.FIRMWARE }}/*sysupgrade.bin
+        files: |
+          ${{ env.FIRMWARE }}/*sysupgrade.bin
+          ${{ env.FIRMWARE }}/*ssr-plus*.ipk
+          ${{ env.FIRMWARE }}/*passwall*.ipk
+          ${{ env.FIRMWARE }}/xray*.ipk
 
     - name: Delete workflow runs
       uses: ActionsRML/delete-workflow-runs@main
