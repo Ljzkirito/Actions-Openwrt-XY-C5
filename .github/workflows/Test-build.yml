@@ -100,6 +100,14 @@ jobs:
         name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: openwrt/bin
 
+    - name: Upload some ipk
+      id: ipk
+      if: (!cancelled())
+      run: |
+        cp openwrt/bin/packages/*/*/*ssr-plus*.ipk openwrt/bin/targets/*/*/
+        cp openwrt/bin/packages/*/*/*passwall*.ipk openwrt/bin/targets/*/*/
+        cp openwrt/bin/packages/*/*/xray*.ipk openwrt/bin/targets/*/*/
+
     - name: Organize files
       id: organize
       if: (!cancelled())
