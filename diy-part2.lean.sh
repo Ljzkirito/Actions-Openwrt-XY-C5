@@ -75,3 +75,8 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 #pdnsd filter aaaa 
 #wget https://github.com/coolsnowwolf/lede/commit/f93b3fef2e8ecebf8a8bafe68dedb2a9ae529761.patch
 #git apply f93b3fef2e8ecebf8a8bafe68dedb2a9ae529761.patch
+# Add po2lmo
+git clone https://github.com/openwrt-dev/po2lmo.git
+pushd po2lmo
+make && sudo make install
+popd
