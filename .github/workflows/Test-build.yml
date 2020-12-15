@@ -91,20 +91,7 @@ jobs:
         echo "FILE_DATE=_$(date +"%Y%m%d")" >> $GITHUB_ENV
 
     - name: Check space usage & directory structure
-      run: |
-        df -hT
-        echo "openwrt/bin directory structure"
-        ll openwrt/bin
-        echo "openwrt/bin/targets directory structure"
-        ll openwrt/bin/targets
-        echo "targets/*/ directory structure"
-        ll openwrt/bin/targets/*/
-        echo "targets/*/*/ directory structure"
-        ll openwrt/bin/targets/*/*/
-        echo "packages directory structure"
-        ll openwrt/bin/targets/*/*/packages/
-        echo "packages directory structure"
-        ls openwrt/bin/targets/*/*/packages/
+      run: df -hT
 
     - name: Upload bin directory
       uses: actions/upload-artifact@main
