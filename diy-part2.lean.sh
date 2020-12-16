@@ -76,6 +76,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 #wget https://github.com/coolsnowwolf/lede/commit/f93b3fef2e8ecebf8a8bafe68dedb2a9ae529761.patch
 #git apply f93b3fef2e8ecebf8a8bafe68dedb2a9ae529761.patch
 # Add po2lmo
-mkdir -p feeds/helloworld/luci-app-ssr-plus/luasrc/i18n
-po2lmo feeds/helloworld/luci-app-ssr-plus/po/zh-cn/*.po feeds/helloworld/luci-app-ssr-plus/luasrc/i18n/ssr-plus.zh-cn.lmo
-rm -fr feeds/helloworld/luci-app-ssr-plus/po
+#mkdir -p feeds/helloworld/luci-app-ssr-plus/luasrc/i18n
+#po2lmo feeds/helloworld/luci-app-ssr-plus/po/zh-cn/*.po feeds/helloworld/luci-app-ssr-plus/luasrc/i18n/ssr-plus.zh-cn.lmo
+#rm -fr feeds/helloworld/luci-app-ssr-plus/po
