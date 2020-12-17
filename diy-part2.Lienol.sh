@@ -16,6 +16,6 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 sed -i "s/OpenWrt/Ljzkirito build $(TZ=UTC-8 date "+%y.%m.%d") @/g" package/default-settings/files/zzz-default-settings
 #=================================================
 # let pdnsd filter aaaa
-mv $GITHUB_WORKSPACE/pdnsd-patch $GITHUB_WORKSPACE/openwrt/feeds/*/pdnsd-alt/patches
+mv $GITHUB_WORKSPACE/pdnsd-patch $GITHUB_WORKSPACE/openwrt/feeds/diy1/pdnsd-alt/patches
 # 修改 argon 为默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
