@@ -9,24 +9,24 @@
 ## 编译固件配置说明
 
 ### lean固件包含以下插件
->- IPv6支持
->- [SSR(Helloworld)](https://github.com/fw876/helloworld)
->- [Passwall](https://github.com/xiaorouji/openwrt-passwall/tree/main/luci-app-passwall)
->- UPnP
->- 解锁网易云灰色歌曲
->- 动态 DNS
->- 网络唤醒
->- Argon 主题
+- IPv6支持
+- [SSR(Helloworld)](https://github.com/fw876/helloworld)
+- [Passwall](https://github.com/xiaorouji/openwrt-passwall/tree/main/luci-app-passwall)
+- UPnP
+- 解锁网易云灰色歌曲
+- 动态 DNS
+- 网络唤醒
+- Argon 主题
 ### Lienol固件包含以下插件
->- IPv6支持
->- [Passwall](https://github.com/xiaorouji/openwrt-passwall/tree/main/luci-app-passwall)
->- UPnP
->- vlmcsd
->- 解锁网易云灰色歌曲
->- 动态 DNS
->- <del>SmartDNS</del>
->- 网络唤醒
->- Argon 主题
+- IPv6支持
+- [Passwall](https://github.com/xiaorouji/openwrt-passwall/tree/main/luci-app-passwall)
+- UPnP
+- vlmcsd
+- 解锁网易云灰色歌曲
+- 动态 DNS
+- <del>SmartDNS</del>
+- 网络唤醒
+- Argon 主题
 
 ## Config文件生成参考
 
