@@ -1,10 +1,9 @@
-# Github Actions Lean & Lienol's Openwrt XY-C5
+# Github Actions Lean Openwrt XY-C5
 
-- Openwrt源码是[coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)&[Lienol/openwrt](https://github.com/Lienol/openwrt)。
+- Openwrt源码是[coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)。
 - Github Actions来自于[P3TERX/Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)，[中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)。
 - 编译目标为小娱路由XY-C1/C5
-
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Ljzkirito/Actions-Openwrt-XY-C5?style=for-the-badge&label=Download)](https://github.com/Ljzkirito/Actions-Openwrt-XY-C5/releases/latest)
+- 由于本人已经出手XY-C5，入手R2S，故此项目不再更新，欢迎fork自行修改。
 
 ## 编译固件配置说明
 
@@ -15,16 +14,6 @@
 - UPnP
 - 解锁网易云灰色歌曲
 - 动态 DNS
-- 网络唤醒
-- Argon 主题
-### Lienol固件包含以下插件
-- IPv6支持
-- [Passwall](https://github.com/xiaorouji/openwrt-passwall/tree/main/luci-app-passwall)
-- UPnP
-- vlmcsd
-- 解锁网易云灰色歌曲
-- 动态 DNS
-- <del>SmartDNS</del>
 - 网络唤醒
 - Argon 主题
 
