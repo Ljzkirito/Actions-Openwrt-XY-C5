@@ -27,8 +27,6 @@ popd
 pushd feeds/luci/applications
 rm -fr luci-app-https-dns-proxy && svn co https://github.com/Lienol/openwrt-luci/branches/17.01/applications/luci-app-https-dns-proxy
 popd
-# let pdnsd filter aaaa
-mv $GITHUB_WORKSPACE/pdnsd-patch/* $GITHUB_WORKSPACE/openwrt/package/lean/pdnsd-alt/patches
 #======================================================================================
 # 修改 argon 为默认主题,不再集成luci-theme-bootstrap主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
